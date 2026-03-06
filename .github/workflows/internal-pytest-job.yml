@@ -13,13 +13,13 @@ jobs:
 
   tests-parallel:
     needs: pre-commit
+    name: "Test | All"
     runs-on: ubuntu-latest
     strategy:
       matrix:
         test-type: [smoke, integration, e2e]
 
     steps:
-      - name: "Run all tests"
       - uses: actions/checkout@v5
 
       - uses: actions/setup-python@v6
